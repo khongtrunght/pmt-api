@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi-vn">
+
+<head>
+    <title>Student Info</title>
+    <meta name="description" content="A simple introduction to HTML" />
+    <meta name="author" content="Phan Manh Tuan" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+    <style>
+        #customers {
+            font-family: Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 80%;
+            margin: auto;
+        }
+        
+        #customers td,
+        #customers th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        
+        #customers tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        #customers tr:hover {
+            background-color: #ddd;
+        }
+        
+        #customers th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #0a60e0;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container align-self-center">
+        <h1 class="mt-4">Tìm theo Họ Và Tên</h1>
+        <form action="../student/name_html/" method="GET">
+            <div class="mb-3">
+                <label class="form-label">Nhập vào Họ và Tên cần tìm :
+          </label>
+                <input class="form-control" id="name" name="name" type="text" placeholder="Họ và Tên viết hoa chữ đầu" />
+            </div>
+            <button type="submit" class="btn btn-primary mb-3">Tìm kiếm</button>
+        </form>
+    </div>
+
+
+    <table data-toggle="table" id='customers'>
+        <thead>
+            <tr>
+                <th>MSSV</th>
+                <th>Name</th>
+                <th>Class</th>
+                <th>Facebook</th>
+                <th>Details</th>
+            </tr>
+        </thead>
+        <tbody>
+
+        </tbody>
+      </table>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
