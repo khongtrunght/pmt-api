@@ -9,4 +9,5 @@ uplink
 pydantic
 psycopg2-binary
 starlette==0.13.2
+gunicorn==20.0.4
 jinja2
