@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Optional, List
 
 from pydantic import BaseModel
 import pydantic
@@ -31,3 +31,9 @@ class NameStudent(BaseModel):
 
     class Config:
         orm_mode = True
+
+
+class ListNameStudent(BaseModel):
+    data : List[NameStudent]
+
+

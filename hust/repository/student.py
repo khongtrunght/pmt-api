@@ -46,7 +46,8 @@ def find_by_name(name: str, db: Session):
         raise HTTPException(status_code=status.HTTP_404_NOT_FOUND, detail=f"Student with name {name} not found")
     for student in list_student:
         print(student)
-    return list_student
+    lst = schemas.ListNameStudent(data=list_student)
+    return lst
 
 
 

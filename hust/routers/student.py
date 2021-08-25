@@ -42,7 +42,7 @@ async def find_by_name(name : str, db: Session = Depends((get_db))):
 @router.get("/name_html/", response_class=HTMLResponse)
 def get_html_by_name(request: Request,  name: str, db: Session = Depends(get_db)):
     list_student = student.find_by_name(name, db)
-    return templates.TemplateResponse("name.html", {"request": request, "list_student": list_student})
+    return templates.TemplateResponse("name.html", {"request": request, "list_student": list_student.data})
 
 
 
