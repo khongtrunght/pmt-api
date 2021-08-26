@@ -26,8 +26,10 @@ class ShowStudent(BaseModel):
 class NameStudent(BaseModel):
     id : str
     fullname : Optional[str] = None
+    lop_id : Optional[str] = None
     image_url: Optional[str] = None
     fb_link: Optional[str] = None
+
 
     class Config:
         orm_mode = True
