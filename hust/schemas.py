@@ -1,6 +1,6 @@
 from typing import Optional, List
 
-from pydantic import BaseModel
+from pydantic import BaseModel, validator
 import pydantic
 
 class ShowStudent(BaseModel):
@@ -37,5 +37,20 @@ class NameStudent(BaseModel):
 
 class ListNameStudent(BaseModel):
     data : List[NameStudent]
+
+
+class DRLRsp(BaseModel):
+    RespCode : Optional[int]
+    RespText : Optional[str]
+    Mark : int
+
+    @validator("RespCode", pre=True, always=True)
+    def set_code(cls, code):
+        return code or 0
+
+
+    @validator("RespText", pre=True, always=True)
+    def set_text(cls, text):
+        return text or "OK"
 
 
