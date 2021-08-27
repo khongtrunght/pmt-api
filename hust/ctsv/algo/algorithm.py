@@ -1,2 +1,20 @@
+from abc import abstractmethod
+
+from hust.ctsv.schemas.schemas import DRL, ActivitiesLst
+
+
 class Algorithm:
-    pass
+    @abstractmethod
+    def __init__(self, drl: DRL, a_list: ActivitiesLst):
+        pass
+    @abstractmethod
+    def optimize(self):
+        pass
+
+    @abstractmethod
+    def get_drl_optimal(self) -> DRL:
+        pass
+
+    @abstractmethod
+    def contruct_optimal_graph(self):
+        pass

@@ -1,9 +1,11 @@
 from copy import deepcopy
 
+from hust.ctsv.algo.algorithm import Algorithm
 from hust.ctsv.schemas.schemas import DRL, ActivitiesLst
 
 
-class Backtracking:
+
+class Backtracking(Algorithm):
     def __init__(self, drl: DRL, a_list: ActivitiesLst):
         self.drl = drl
         self.a_list = a_list
