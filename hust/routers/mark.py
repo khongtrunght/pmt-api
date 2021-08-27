@@ -1,7 +1,7 @@
 from fastapi import APIRouter
 
 from hust import schemas
-from hust.ctsv.main import non_bearer_mark
+from hust.repository import mark
 from hust.schemas import DRLRsp
 
 router = APIRouter(prefix="/hust", tags=["Mark Criteria"])
@@ -15,5 +15,6 @@ def welcome():
 
 @router.post("/", response_model=schemas.DRLRsp)
 async def mark_criteria(mssv: str, cookies: str, semester: str):
-    drl = non_bearer_mark(mssv, cookies, semester)
+    drl = mark.mark_criteria(mssv, cookies, semester)
+    print(type(drl))
     return DRLRsp(Mark=drl)
