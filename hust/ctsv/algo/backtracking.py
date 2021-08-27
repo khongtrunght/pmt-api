@@ -75,6 +75,6 @@ class PrintExportor:
             print("\tCTYPE", ctype.get_current_point())
             for cgroup in ctype.CriteriaGroupDetailsLst:
                 print("\t\tCGROUP", cgroup.get_current_point())
-                for criteria in cgroup.UserCriteriaDetailsLst:
-                    print("\t\t\tC ", criteria.get_current_point())
-                    print("\t\t\t ", criteria.UserCriteriaActivityLst)
+                # for criteria in cgroup.UserCriteriaDetailsLst:
+                #     print("\t\t\tC ", criteria.get_current_point())
+                #     print("\t\t\t ", criteria.UserCriteriaActivityLst)

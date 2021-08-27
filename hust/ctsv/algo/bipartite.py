@@ -9,6 +9,7 @@ from collections import defaultdict
 class Bipartite(Algorithm):
     def __init__(self, drl: DRL, a_list: ActivitiesLst):
         self.tieu_chi_lst = self.get_list_criteria_view(drl)
+        assert len(self.tieu_chi_lst) > 0
         self.tieu_chi_id_lst = [tieu_chi.CId for tieu_chi in self.tieu_chi_lst]
         self.tieu_chi_dict = dict(zip(self.tieu_chi_id_lst, self.tieu_chi_lst))
 
