@@ -14,7 +14,7 @@ def mark_criteria(mssv: str, token: str, semester: str):
         cham = BearerInfoGet(user)
     else:
         cham = NonBearerInfoGet(user)
-    drl = DRL.parse_file("../../resources/drl.json")
+    drl = DRL.parse_file("resources/drl.json")
     a_list = cham.get_list_of_activities(drl.get_CId_lst())
     algorithm = Backtracking(drl, a_list)
     algorithm.optimize()
