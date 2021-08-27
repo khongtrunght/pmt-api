@@ -17,7 +17,7 @@ def welcome():
 async def mark_criteria(mssv: str, cookies: str, semester: str):
     try :
         drl = mark.mark_criteria(mssv, cookies, semester)
-        print(type(drl))
+        print(drl)
         return DRLRsp(Mark=drl)
     except:
         return DRLRsp(Mark=0, RespCode=101)
