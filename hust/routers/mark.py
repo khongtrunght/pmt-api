@@ -1,8 +1,13 @@
+import logging
+import time
+
 from fastapi import APIRouter
 
 from hust import schemas
 from hust.repository import mark
 from hust.schemas import DRLRsp
+
+logging.basicConfig(level=logging.INFO)
 
 router = APIRouter(prefix="/hust", tags=["Mark Criteria"])
 
@@ -15,9 +20,11 @@ def welcome():
 
 @router.post("/", response_model=schemas.DRLRsp)
 async def mark_criteria(mssv: str, cookies: str, semester: str):
-    try :
+    start = time.time()
+    try:
         drl = await mark.mark_criteria(mssv, cookies, semester)
-        print(drl)
+        end = time.time()
+        print("Time : " + str(end - start))
         return DRLRsp(Mark=drl)
     except Exception as e:
         print(e)

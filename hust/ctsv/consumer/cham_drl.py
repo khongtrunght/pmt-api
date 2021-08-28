@@ -36,7 +36,6 @@ class InfoGet:
 
 
         rsp = await asyncio.gather(*tasks)
-        print(rsp)
         for criteria in rsp:
             if len(criteria.Activities) > 0:
                 out_put.append(criteria.Activities[0].AId)
@@ -45,7 +44,6 @@ class InfoGet:
     async def get_list_of_activities(self, cid_lst: List[int]):
         # tasks = []
         id_lst = await self.get_list_of_activities_id(cid_lst)
-        print(id_lst)
         activities_lst = ActivitiesLst(__root__=[])
         # for id in id_lst:
         #     tasks.append(asyncio.create_task(self.api.get_activity_by_id({**self.user.dict(), 'AId': id})))
