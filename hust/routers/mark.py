@@ -16,8 +16,9 @@ def welcome():
 @router.post("/", response_model=schemas.DRLRsp)
 async def mark_criteria(mssv: str, cookies: str, semester: str):
     try :
-        drl = mark.mark_criteria(mssv, cookies, semester)
+        drl = await mark.mark_criteria(mssv, cookies, semester)
         print(drl)
         return DRLRsp(Mark=drl)
-    except:
+    except Exception as e:
+        print(e)
         return DRLRsp(Mark=0, RespCode=101)
