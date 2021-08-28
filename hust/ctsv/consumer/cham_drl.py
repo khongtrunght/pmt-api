@@ -18,6 +18,7 @@ class InfoGet:
     def __init__(self, user: RqtCriteria):
         self.user: RqtCriteria = user
         self.api: Student
+        self.syncApi : Student
         self.initiallize()
 
     async def get_list_of_activities_id(self, cid_lst: List[int]):
@@ -58,7 +59,10 @@ class InfoGet:
     def mark_criteria(self, drl: DRL):
         mark_criteria = RqtMarkCriteria(**drl.dict(), **self.user.dict())
         mark_criteria = mark_criteria.json().encode('utf-8')
-        self.api.mark_criteria_user(mark_criteria)
+        rsp = self.syncApi.mark_criteria_user(mark_criteria)
+
+
+
 
 
 class BearerInfoGet(InfoGet):
@@ -66,9 +70,11 @@ class BearerInfoGet(InfoGet):
         token_auth = ApiTokenHeader("Authorization",
                                     self.user.TokenCode)
         self.api = Student(base_url="https://ctsv.hust.edu.vn/", auth=token_auth, client=uplink.AiohttpClient())
+        self.syncApi = Student(base_url="https://ctsv.hust.edu.vn/", auth=token_auth)
 
 
 
 class NonBearerInfoGet(InfoGet):
     def initiallize(self):
         self.api = Student(base_url="https://ctsv.hust.edu.vn/", client=uplink.AiohttpClient())
+        self.syncApi = Student(base_url="https://ctsv.hust.edu.vn/")
