@@ -25,20 +25,20 @@ class InfoGet:
         user_copy_cid = RqtActivityUserCId(**self.user.dict())
         out_put = []
 
-        sem = asyncio.Semaphore(3)
+        sem = asyncio.Semaphore(30)
 
         async def safe_fetch(id):
             async with sem:
                 user_copy_cid.CId = id
-                return await self.api.get_activity_by_cid(user_copy_cid)
+                temp_criteria = await self.api.get_activity_by_cid(user_copy_cid)
+                for ac in temp_criteria.Activities:
+                    out_put.append(ac.AId)
+                return temp_criteria
 
         tasks = [asyncio.ensure_future(safe_fetch(id)) for id in cid_lst]
 
 
         rsp = await asyncio.gather(*tasks)
-        for criteria in rsp:
-            if len(criteria.Activities) > 0:
-                out_put.append(criteria.Activities[0].AId)
         return out_put
 
     async def get_list_of_activities(self, cid_lst: List[int]):
