@@ -18,7 +18,6 @@ async def mark_criteria(mssv: str, token: str, semester: str):
     else:
         cham = NonBearerInfoGet(user)
     drl = DRL.parse_file("resources/drl.json")
-    # a_list = asyncio.run(cham.get_list_of_activities(drl.get_CId_lst()))
     a_list = await cham.get_list_of_activities(drl.get_CId_lst())
     algorithm = Bipartite(drl, a_list)
     algorithm.optimize()

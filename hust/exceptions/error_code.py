@@ -1,0 +1,3 @@
+class ErrorCode:
+    TIEU_CHI_NOT_EXIST = 411
+    HET_HAN_DANG_NHAP = 104

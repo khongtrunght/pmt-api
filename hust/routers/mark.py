@@ -4,6 +4,7 @@ import time
 from fastapi import APIRouter
 
 from hust import schemas
+from hust.exceptions.exceptions import InvalidTokenException, HetHanDrlException
 from hust.repository import mark
 from hust.schemas import DRLRsp
 
@@ -26,6 +27,7 @@ async def mark_criteria(mssv: str, cookies: str, semester: str):
         end = time.time()
         print("Time : " + str(end - start))
         return DRLRsp(Mark=drl)
-    except Exception as e:
+    except InvalidTokenException as e :
+        return DRLRsp(Mark=0, RespCode=e.get_rsp().RespCode, RespText=e.get_rsp().RespText)
+    except HetHanDrlException as e :
         print(e)
-        return DRLRsp(Mark=0, RespCode=101)

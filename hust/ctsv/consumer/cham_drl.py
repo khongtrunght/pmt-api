@@ -3,11 +3,13 @@ from abc import abstractmethod
 from typing import List
 
 import uplink
+from uplink.auth import ApiTokenHeader
 
 from hust.ctsv.consumer.student import Student
 from hust.ctsv.schemas.request_schemas import RqtActivityUserCId, RqtMarkCriteria, RqtCriteria
 from hust.ctsv.schemas.schemas import DRL, ActivityViewAlgo, ActivitiesLst
-from uplink.auth import ApiTokenHeader
+from hust.exceptions.error_code import ErrorCode
+from hust.exceptions.exceptions import InvalidTokenException, HetHanDrlException
 
 
 class InfoGet:
@@ -18,7 +20,7 @@ class InfoGet:
     def __init__(self, user: RqtCriteria):
         self.user: RqtCriteria = user
         self.api: Student
-        self.syncApi : Student
+        self.syncApi: Student
         self.initiallize()
 
     async def get_list_of_activities_id(self, cid_lst: List[int]):
@@ -32,23 +34,23 @@ class InfoGet:
             async with sem:
                 user_copy_cid.CId = id
                 temp_criteria = await self.api.get_activity_by_cid(user_copy_cid)
+                # raise errror 104 dang nhap het han
+                if temp_criteria.RespCode == ErrorCode.HET_HAN_DANG_NHAP :
+                    raise InvalidTokenException(f"Lay thong tin khong thanh cong : {temp_criteria.RespText}", temp_criteria)
+                elif temp_criteria.RespCode == ErrorCode.TIEU_CHI_NOT_EXIST:
+                    raise HetHanDrlException(f"Tieu chi {id} khong ton tai")
                 for ac in temp_criteria.Activities:
                     out_put.append(ac.AId)
                 return temp_criteria
 
         tasks = [asyncio.ensure_future(safe_fetch(id)) for id in cid_lst]
 
-
         rsp = await asyncio.gather(*tasks)
         return out_put
 
     async def get_list_of_activities(self, cid_lst: List[int]):
-        # tasks = []
         id_lst = await self.get_list_of_activities_id(cid_lst)
         activities_lst = ActivitiesLst(__root__=[])
-        # for id in id_lst:
-        #     tasks.append(asyncio.create_task(self.api.get_activity_by_id({**self.user.dict(), 'AId': id})))
-
         tasks = [self.api.get_activity_by_id({**self.user.dict(), 'AId': id}) for id in id_lst]
         resps = await asyncio.gather(*tasks)
         for activity in resps:
@@ -62,16 +64,12 @@ class InfoGet:
         rsp = self.syncApi.mark_criteria_user(mark_criteria)
 
 
-
-
-
 class BearerInfoGet(InfoGet):
     def initiallize(self):
         token_auth = ApiTokenHeader("Authorization",
                                     self.user.TokenCode)
         self.api = Student(base_url="https://ctsv.hust.edu.vn/", auth=token_auth, client=uplink.AiohttpClient())
         self.syncApi = Student(base_url="https://ctsv.hust.edu.vn/", auth=token_auth)
-
 
 
 class NonBearerInfoGet(InfoGet):

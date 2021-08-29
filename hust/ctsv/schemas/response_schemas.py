@@ -10,6 +10,8 @@ class Response(BaseModel):
 
 
 class RspActivityView(Response):
+    RespCode : int
+    RespText : str
     Activities: List[ActivityView]
 
 
