@@ -7,25 +7,8 @@ from collections import defaultdict
 
 
 class Bipartite(Algorithm):
-    def __init__(self, drl: DRL, a_list: ActivitiesLst):
-        self.tieu_chi_lst = self.get_list_criteria_view(drl)
-        self.tieu_chi_id_lst = [tieu_chi.CId for tieu_chi in self.tieu_chi_lst]
-        self.tieu_chi_dict = dict(zip(self.tieu_chi_id_lst, self.tieu_chi_lst))
-
-        self.hoat_dong = a_list.get_activities_lst()
-        self.hoat_dong_id = [hd.AId for hd in self.hoat_dong]
-        self.hoat_dong_dict = dict(zip(self.hoat_dong_id, self.hoat_dong))
-
-        self.graph =nx.Graph()
-        self.graph.add_nodes_from(self.hoat_dong_id, bipartite='activities')
-        self.graph.add_nodes_from(self.tieu_chi_id_lst, bipartite='criteria')
-
-        self.drl_optimal = drl.copy(deep=True)
-
-        for id in self.hoat_dong_id:
-            for criteria in self.hoat_dong_dict[id].CriteriaLst:
-                self.graph.add_edge(id, criteria.CId, weight=criteria.CMaxPoint)
-
+    def __init__(self):
+        pass
 
     def get_list_criteria_view(self, drl: DRL) -> List[CriteriaView]:
         tieu_chi_lst : List[CriteriaView] = []
@@ -59,5 +42,31 @@ class Bipartite(Algorithm):
 
     def get_drl_optimal(self) -> DRL:
         return self.drl_optimal
+
+    def initiate(self, drl:DRL, a_list: ActivitiesLst):
+        self.tieu_chi_lst = self.get_list_criteria_view(drl)
+        self.tieu_chi_id_lst = [tieu_chi.CId for tieu_chi in self.tieu_chi_lst]
+        self.tieu_chi_dict = dict(zip(self.tieu_chi_id_lst, self.tieu_chi_lst))
+
+        self.hoat_dong = a_list.get_activities_lst()
+        self.hoat_dong_id = [hd.AId for hd in self.hoat_dong]
+        self.hoat_dong_dict = dict(zip(self.hoat_dong_id, self.hoat_dong))
+
+        self.graph = nx.Graph()
+        self.graph.add_nodes_from(self.hoat_dong_id, bipartite='activities')
+        self.graph.add_nodes_from(self.tieu_chi_id_lst, bipartite='criteria')
+
+        self.drl_optimal = drl.copy(deep=True)
+
+        for id in self.hoat_dong_id:
+            for criteria in self.hoat_dong_dict[id].CriteriaLst:
+                self.graph.add_edge(id, criteria.CId, weight=criteria.CMaxPoint)
+
+    def run(self, drl:DRL, a_list: ActivitiesLst):
+        self.initiate(drl, a_list)
+        self.optimize()
+        return self.get_drl_optimal()
+
+
 
 

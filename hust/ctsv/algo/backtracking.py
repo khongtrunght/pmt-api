@@ -6,13 +6,12 @@ from hust.ctsv.schemas.schemas import DRL, ActivitiesLst
 
 
 class Backtracking(Algorithm):
-    def __init__(self, drl: DRL, a_list: ActivitiesLst):
+    def initiate(self, drl: DRL, a_list: ActivitiesLst):
         self.drl = drl
         self.a_list = a_list
         self.max_point = 0
         self.drl_optimal = None
         self.a_list_optimal = None
-
         self.construct_graph()
 
     def construct_graph(self):
@@ -63,6 +62,11 @@ class Backtracking(Algorithm):
 
     def get_drl_optimal(self) -> DRL:
         return self.drl_optimal
+
+    def run(self, drl:DRL, a_list: ActivitiesLst):
+        self.initiate(drl, a_list)
+        self.optimize()
+        return self.get_drl_optimal()
 
 
 class PrintExportor:

@@ -5,8 +5,9 @@ from hust.ctsv.schemas.schemas import DRL, ActivitiesLst
 
 class Algorithm:
     @abstractmethod
-    def __init__(self, drl: DRL, a_list: ActivitiesLst):
+    def initiate(self, drl: DRL, a_list: ActivitiesLst):
         pass
+
     @abstractmethod
     def optimize(self):
         pass
@@ -17,4 +18,8 @@ class Algorithm:
 
     @abstractmethod
     def contruct_optimal_graph(self):
+        pass
+
+    @abstractmethod
+    def run(self, drl:DRL, a_list: ActivitiesLst):
         pass

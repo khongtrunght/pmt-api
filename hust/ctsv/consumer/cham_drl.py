@@ -5,6 +5,7 @@ from typing import List
 import uplink
 from uplink.auth import ApiTokenHeader
 
+from hust.ctsv.algo.algorithm import Algorithm
 from hust.ctsv.consumer.student import Student
 from hust.ctsv.schemas.request_schemas import RqtActivityUserCId, RqtMarkCriteria, RqtCriteria
 from hust.ctsv.schemas.schemas import DRL, ActivityViewAlgo, ActivitiesLst
@@ -21,6 +22,7 @@ class InfoGet:
         self.user: RqtCriteria = user
         self.api: Student
         self.syncApi: Student
+        self.rootDRL = DRL.parse_file("resources/drl.json")
         self.initiallize()
 
     async def get_list_of_activities_id(self, cid_lst: List[int]):
@@ -58,7 +60,9 @@ class InfoGet:
             activities_lst.add_activity(ActivityViewAlgo(**a.dict()))
         return activities_lst
 
-    def mark_criteria(self, drl: DRL):
+    async def mark_criteria(self, algo:Algorithm):
+        a_list = await self.get_list_of_activities(self.rootDRL.get_CId_lst())
+        drl = algo.run(self.rootDRL, a_list)
         mark_criteria = RqtMarkCriteria(**drl.dict(), **self.user.dict())
         mark_criteria = mark_criteria.json().encode('utf-8')
         rsp = self.syncApi.mark_criteria_user(mark_criteria)

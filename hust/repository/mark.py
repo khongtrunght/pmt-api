@@ -17,12 +17,10 @@ async def mark_criteria(mssv: str, token: str, semester: str):
         cham = BearerInfoGet(user)
     else:
         cham = NonBearerInfoGet(user)
-    drl = DRL.parse_file("resources/drl.json")
-    a_list = await cham.get_list_of_activities(drl.get_CId_lst())
-    algorithm = Bipartite(drl, a_list)
-    algorithm.optimize()
-    cham.mark_criteria(algorithm.get_drl_optimal())
 
+    # algorithm = Bipartite()
+    algorithm = Backtracking()
+    await cham.mark_criteria(algorithm)
     printExportor = PrintExportor()
     printExportor.store(algorithm.get_drl_optimal())
     printExportor.print()
