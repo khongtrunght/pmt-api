@@ -1,5 +1,5 @@
 from hust.ctsv.schemas.request_schemas import *
-from hust.ctsv.schemas.response_schemas import RspCriteriaTypeDetails, RspActivityView
+from hust.ctsv.schemas.response_schemas import RspCriteriaTypeDetails, RspActivityView, SemesterResp, Response
 from uplink import Consumer, Body, post, headers
 from uplink.auth import BearerToken
 
@@ -20,7 +20,7 @@ class Student(Consumer):
         # "Accept-Language": "vi,vi-VN;q=0.9,en-US;q=0.8,en;q=0.7,fr-FR;q=0.6,fr;q=0.5"
     })
     @post("api-t/Point/MarkCriteriaUser")
-    def mark_criteria_user(self, mark_criteria: Body()):
+    def mark_criteria_user(self, mark_criteria: Body()) -> Response:
         pass
 
     @post("api-t/Criteria/GetCriteriaTypeDetails")
@@ -33,4 +33,8 @@ class Student(Consumer):
 
     @post("api-t/User/GetUserInfo")
     def get_user_info(self, user: Body):
+        pass
+
+    @post("api-t/Point/GetSemester")
+    def get_semester(self, user: Body(type=User)) -> SemesterResp:
         pass

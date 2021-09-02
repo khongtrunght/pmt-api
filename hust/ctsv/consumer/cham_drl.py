@@ -8,6 +8,7 @@ from uplink.auth import ApiTokenHeader
 from hust.ctsv.algo.algorithm import Algorithm
 from hust.ctsv.consumer.student import Student
 from hust.ctsv.schemas.request_schemas import RqtActivityUserCId, RqtMarkCriteria, RqtCriteria
+from hust.ctsv.schemas.response_schemas import SemesterResp
 from hust.ctsv.schemas.schemas import DRL, ActivityViewAlgo, ActivitiesLst
 from hust.exceptions.error_code import ErrorCode
 from hust.exceptions.exceptions import InvalidTokenException, HetHanDrlException
@@ -66,6 +67,11 @@ class InfoGet:
         mark_criteria = RqtMarkCriteria(**drl.dict(), **self.user.dict())
         mark_criteria = mark_criteria.json().encode('utf-8')
         rsp = self.syncApi.mark_criteria_user(mark_criteria)
+        return rsp
+
+    async def get_current_semester(self):
+        rsp: SemesterResp = await self.api.getSemester(self.user)
+        return rsp.get_current_semester()
 
 
 class BearerInfoGet(InfoGet):
@@ -74,9 +80,13 @@ class BearerInfoGet(InfoGet):
                                     self.user.TokenCode)
         self.api = Student(base_url="https://ctsv.hust.edu.vn/", auth=token_auth, client=uplink.AiohttpClient())
         self.syncApi = Student(base_url="https://ctsv.hust.edu.vn/", auth=token_auth)
+        if self.user.Semester is None:
+                self.user.Semester = self.syncApi.get_semester(self.user).get_current_semester()
 
 
 class NonBearerInfoGet(InfoGet):
     def initiallize(self):
         self.api = Student(base_url="https://ctsv.hust.edu.vn/", client=uplink.AiohttpClient())
         self.syncApi = Student(base_url="https://ctsv.hust.edu.vn/")
+        if self.user.Semester is None:
+                self.user.Semester = self.syncApi.get_semester(self.user).get_current_semester()

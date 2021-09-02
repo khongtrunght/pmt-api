@@ -22,3 +22,16 @@ class RspActivity(Response):
 
 class RspCriteriaTypeDetails(Response):
     CriteriaTypeDetailsLst: List[CriteriaType]
+
+
+class Semester(BaseModel):
+    Scode: str
+    Student : bool
+    Teacher : bool
+
+class SemesterResp(Response):
+    SemesterLst : List[Semester]
+
+    def get_current_semester(self):
+        if len(self.SemesterLst) != 0:
+            return self.SemesterLst[-1].Scode

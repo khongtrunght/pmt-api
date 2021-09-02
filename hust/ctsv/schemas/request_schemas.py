@@ -16,7 +16,7 @@ class RqtActivity(User):
 
 class RqtCriteria(User):
     UserCode: str = None
-    Semester: str
+    Semester: str = None
 
     @pydantic.validator('UserCode', pre=True, always=True)
     def default_ts_usercode(cls, v, *, values, **kwargs):
