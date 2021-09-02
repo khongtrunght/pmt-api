@@ -28,8 +28,6 @@ async def mark_criteria(mssv: str, token: str, semester: Optional[str] = None):
     printExportor.store(algorithm.get_drl_optimal())
     printExportor.print()
 
-    print("Resp: ", resp)
-
     if resp.RespCode != 0:
         raise ChamException("Co loi khi cham", resp)
 
