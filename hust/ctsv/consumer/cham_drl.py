@@ -13,6 +13,10 @@ from hust.ctsv.schemas.schemas import DRL, ActivityViewAlgo, ActivitiesLst
 from hust.exceptions.error_code import ErrorCode
 from hust.exceptions.exceptions import InvalidTokenException, HetHanDrlException
 
+DRL_JSON = "resources/drl.json"
+
+BASE_URL = "https://ctsv.hust.edu.vn/"
+
 
 class InfoGet:
     @abstractmethod
@@ -23,7 +27,7 @@ class InfoGet:
         self.user: RqtCriteria = user
         self.api: Student
         self.syncApi: Student
-        self.rootDRL = DRL.parse_file("resources/drl.json")
+        self.rootDRL = DRL.parse_file(DRL_JSON)
         self.initiallize()
 
     async def get_list_of_activities_id(self, cid_lst: List[int]):
@@ -78,15 +82,15 @@ class BearerInfoGet(InfoGet):
     def initiallize(self):
         token_auth = ApiTokenHeader("Authorization",
                                     self.user.TokenCode)
-        self.api = Student(base_url="https://ctsv.hust.edu.vn/", auth=token_auth, client=uplink.AiohttpClient())
-        self.syncApi = Student(base_url="https://ctsv.hust.edu.vn/", auth=token_auth)
+        self.api = Student(base_url=BASE_URL, auth=token_auth, client=uplink.AiohttpClient())
+        self.syncApi = Student(base_url=BASE_URL, auth=token_auth)
         if self.user.Semester is None:
                 self.user.Semester = self.syncApi.get_semester(self.user).get_current_semester()
 
 
 class NonBearerInfoGet(InfoGet):
     def initiallize(self):
-        self.api = Student(base_url="https://ctsv.hust.edu.vn/", client=uplink.AiohttpClient())
-        self.syncApi = Student(base_url="https://ctsv.hust.edu.vn/")
+        self.api = Student(base_url=BASE_URL, client=uplink.AiohttpClient())
+        self.syncApi = Student(base_url=BASE_URL)
         if self.user.Semester is None:
                 self.user.Semester = self.syncApi.get_semester(self.user).get_current_semester()
