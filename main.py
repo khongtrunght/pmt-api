@@ -3,7 +3,7 @@ from fastapi.responses import HTMLResponse
 from starlette.middleware.cors import CORSMiddleware
 from starlette.middleware import Middleware
 from pydantic import BaseSettings
-from hust.routers import mark,student
+from hust.routers import mark
 
 class Settings(BaseSettings):
     openapi_url: str = "/openapi.json"
@@ -37,4 +37,4 @@ app = FastAPI(middleware=middleware, openapi_url=settings.openapi_url)
 #         return HTMLResponse(html_file.read())
 
 app.include_router(mark.router)
-app.include_router(student.router)
+# app.include_router(student.router)

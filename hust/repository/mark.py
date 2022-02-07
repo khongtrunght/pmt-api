@@ -21,8 +21,8 @@ async def mark_criteria(mssv: str, token: str, semester: Optional[str] = None):
     else:
         cham = NonBearerInfoGet(user)
 
-    algorithm = Bipartite()
-    # algorithm = Backtracking()
+    # algorithm = Bipartite()
+    algorithm = Backtracking()
     resp = await cham.mark_criteria(algorithm)
     printExportor = PrintExportor()
     printExportor.store(algorithm.get_drl_optimal())
