@@ -5,7 +5,7 @@
     {
       "CTId": 1,
       "CTName": "Điểm học tập",
-      "CTPoint": 0.0,
+      "CTPoint": 6.0,
       "TCTPoint": 0.0,
       "CTMaxPoint": 30.0,
       "CriteriaGroupDetailsLst": [
@@ -134,7 +134,7 @@
         {
           "CGId": 3,
           "CGName": "Tham gia các hoạt động học thuật",
-          "CGPoint": 0.0,
+          "CGPoint": 6.00,
           "TCGPoint": 0.0,
           "CGMaxPoint": 9.0,
           "UserCriteriaDetailsLst": [
@@ -191,17 +191,28 @@
               "UserCriteriaActivityLst": []
             },
             {
-              "UCId": 0,
+              "UCId": 4191145,
               "CId": 103,
               "CName": "Tham gia khóa đào tạo kỹ năng nghề nghiệp, kỹ năng bổ trợ chuyên môn",
               "UCDes": "",
-              "UCPoint": 0.0,
+              "UCPoint": 6.00,
               "TCPoint": 0.0,
               "CMaxPoint": 6.0,
               "AssessUser": "",
               "Proof": 1,
               "ProofText": 0,
-              "UserCriteriaActivityLst": []
+              "UserCriteriaActivityLst": [
+                {
+                  "UCAId": 14210072,
+                  "AId": 6984,
+                  "AName": "[2022.1] Tham gia khóa đào tạo kỹ năng nghề nghiệp, kỹ năng bổ trợ chuyên môn tại doanh nghiệp ",
+                  "CreateUser": "20194461",
+                  "CreateDate": "2023-03-18 11:33:42",
+                  "StartTime": "2023-03-01 00:00:00",
+                  "FinishTime": "2023-03-17 00:00:00",
+                  "UCAStatus": 1
+                }
+              ]
             }
           ]
         }
@@ -210,23 +221,23 @@
     {
       "CTId": 2,
       "CTName": "Điểm về tổ chức ý thức kỷ luật",
-      "CTPoint": 25.0,
+      "CTPoint": 22.0,
       "TCTPoint": 0.0,
       "CTMaxPoint": 25.0,
       "CriteriaGroupDetailsLst": [
         {
           "CGId": 4,
           "CGName": "Tham gia các hoạt động bắt buộc",
-          "CGPoint": 20.00,
+          "CGPoint": 13.00,
           "TCGPoint": 0.0,
           "CGMaxPoint": 20.0,
           "UserCriteriaDetailsLst": [
             {
-              "UCId": 3275565,
+              "UCId": 0,
               "CId": 94,
               "CName": "Tham gia Sinh hoạt công dân do Trường, Viện tổ chức",
               "UCDes": "",
-              "UCPoint": 0.00,
+              "UCPoint": 0.0,
               "TCPoint": 0.0,
               "CMaxPoint": 7.0,
               "AssessUser": "",
@@ -235,70 +246,90 @@
               "UserCriteriaActivityLst": []
             },
             {
-              "UCId": 3462030,
+              "UCId": 4165381,
               "CId": 95,
               "CName": "Tham gia Họp lớp thường kỳ do Viện, Trường tổ chức",
               "UCDes": "",
-              "UCPoint": 0.00,
+              "UCPoint": 7.00,
               "TCPoint": 0.0,
               "CMaxPoint": 7.0,
               "AssessUser": "",
               "Proof": 1,
               "ProofText": 0,
-              "UserCriteriaActivityLst": []
+              "UserCriteriaActivityLst": [
+                {
+                  "UCAId": 14210073,
+                  "AId": 6854,
+                  "AName": "Họp lớp sinh viên kỳ 2022.1- Trường Công nghệ Thông tin và Truyền thông",
+                  "CreateUser": "20194461",
+                  "CreateDate": "2023-03-18 11:33:42",
+                  "StartTime": "2023-01-02 00:00:00",
+                  "FinishTime": "2023-03-15 00:00:00",
+                  "UCAStatus": 1
+                }
+              ]
             },
             {
-              "UCId": 3426226,
+              "UCId": 4131314,
               "CId": 96,
               "CName": "Nắm vững quy định và quy chế của Nhà trường",
               "UCDes": "",
-              "UCPoint": 0.00,
+              "UCPoint": 6.00,
               "TCPoint": 0.0,
               "CMaxPoint": 6.0,
               "AssessUser": "",
               "Proof": 1,
               "ProofText": 0,
-              "UserCriteriaActivityLst": []
+              "UserCriteriaActivityLst": [
+                {
+                  "UCAId": 14210074,
+                  "AId": 5519,
+                  "AName": "Kiểm tra quy chế kỳ 20221",
+                  "CreateUser": "20194461",
+                  "CreateDate": "2023-03-18 11:33:42",
+                  "StartTime": "2022-12-20 00:00:00",
+                  "FinishTime": "2023-03-13 00:00:00",
+                  "UCAStatus": 1
+                }
+              ]
             }
           ]
         },
         {
           "CGId": 5,
           "CGName": "Tham gia các hoạt động bổ trợ",
-          "CGPoint": 6.00,
+          "CGPoint": 9.00,
           "TCGPoint": 0.0,
           "CGMaxPoint": 9.0,
           "UserCriteriaDetailsLst": [
             {
-              "UCId": 0,
+              "UCId": 4191131,
               "CId": 58,
               "CName": "Tham gia thực tập tăng cường năng lực nghề nghiệp tại doanh nghiệp",
               "UCDes": "",
-              "UCPoint": 0.0,
+              "UCPoint": 6.00,
               "TCPoint": 0.0,
               "CMaxPoint": 6.0,
               "AssessUser": "",
               "Proof": 1,
               "ProofText": 0,
-              "UserCriteriaActivityLst": []
-            },
-            {
-              "UCId": 3404615,
-              "CId": 59,
-              "CName": "Tham gia hội thảo tăng cường kỹ năng mềm, phương pháp học tập, ý thức học tập, làm việc",
-              "UCDes": "",
-              "UCPoint": 0.00,
-              "TCPoint": 0.0,
-              "CMaxPoint": 3.0,
-              "AssessUser": "",
-              "Proof": 1,
-              "ProofText": 0,
-              "UserCriteriaActivityLst": []
+              "UserCriteriaActivityLst": [
+                {
+                  "UCAId": 14210075,
+                  "AId": 6985,
+                  "AName": "[2022.1] Tham gia thực tập tăng cường năng lực nghề nghiệp tại doanh nghiệp",
+                  "CreateUser": "20194461",
+                  "CreateDate": "2023-03-18 11:33:42",
+                  "StartTime": "2023-03-01 00:00:00",
+                  "FinishTime": "2023-03-17 00:00:00",
+                  "UCAStatus": 1
+                }
+              ]
             },
             {
               "UCId": 0,
-              "CId": 60,
-              "CName": "Tham gia các buổi nói chuyện thời sự, phòng chống tội phạm và tệ nạn xã hội ",
+              "CId": 59,
+              "CName": "Tham gia hội thảo tăng cường kỹ năng mềm, phương pháp học tập, ý thức học tập, làm việc",
               "UCDes": "",
               "UCPoint": 0.0,
               "TCPoint": 0.0,
@@ -309,11 +340,35 @@
               "UserCriteriaActivityLst": []
             },
             {
-              "UCId": 3275566,
+              "UCId": 4131315,
+              "CId": 60,
+              "CName": "Tham gia các buổi nói chuyện thời sự, phòng chống tội phạm và tệ nạn xã hội ",
+              "UCDes": "",
+              "UCPoint": 3.00,
+              "TCPoint": 0.0,
+              "CMaxPoint": 3.0,
+              "AssessUser": "",
+              "Proof": 1,
+              "ProofText": 0,
+              "UserCriteriaActivityLst": [
+                {
+                  "UCAId": 14210076,
+                  "AId": 6726,
+                  "AName": "[CBSV CNTT&TT] Sinh hoạt Chuyên đề Chi bộ Sinh viên - Học kì 20221",
+                  "CreateUser": "20194461",
+                  "CreateDate": "2023-03-18 11:33:42",
+                  "StartTime": "2023-02-28 00:00:00",
+                  "FinishTime": "2023-02-28 00:00:00",
+                  "UCAStatus": 1
+                }
+              ]
+            },
+            {
+              "UCId": 0,
               "CId": 61,
               "CName": "Tham gia hoạt động hướng nghiệp, tìm kiếm thông tin việc làm",
               "UCDes": "",
-              "UCPoint": 0.00,
+              "UCPoint": 0.0,
               "TCPoint": 0.0,
               "CMaxPoint": 3.0,
               "AssessUser": "",
@@ -341,23 +396,23 @@
     {
       "CTId": 3,
       "CTName": "Điểm tham gia hoạt động chính trị, xã hội, văn hoá, thể thao",
-      "CTPoint": 16.0,
+      "CTPoint": 13.0,
       "TCTPoint": 0.0,
       "CTMaxPoint": 25.0,
       "CriteriaGroupDetailsLst": [
         {
           "CGId": 6,
           "CGName": "Tham gia các hoạt động phong trào văn hóa, thể thao",
-          "CGPoint": 10.00,
+          "CGPoint": 0.0,
           "TCGPoint": 0.0,
           "CGMaxPoint": 10.0,
           "UserCriteriaDetailsLst": [
             {
-              "UCId": 3275567,
+              "UCId": 0,
               "CId": 62,
               "CName": "Tham gia các cuộc thi biểu diễn văn hóa văn nghệ được tổ chức bởi các đơn vị hợp pháp (hát, múa, nhảy, đàn, sáo, vẽ tranh,…).",
               "UCDes": "",
-              "UCPoint": 0.00,
+              "UCPoint": 0.0,
               "TCPoint": 0.0,
               "CMaxPoint": 6.0,
               "AssessUser": "",
@@ -366,11 +421,11 @@
               "UserCriteriaActivityLst": []
             },
             {
-              "UCId": 3275568,
+              "UCId": 0,
               "CId": 63,
               "CName": "Tham gia các giải thể thao được tổ chức bởi các đơn vị hợp pháp (các môn thể thao chính thức như: chạy, bóng đá, cờ vua, bóng chuyền,…).",
               "UCDes": "",
-              "UCPoint": 0.00,
+              "UCPoint": 0.0,
               "TCPoint": 0.0,
               "CMaxPoint": 6.0,
               "AssessUser": "",
@@ -416,13 +471,26 @@
               "Proof": 1,
               "ProofText": 0,
               "UserCriteriaActivityLst": []
+            },
+            {
+              "UCId": 0,
+              "CId": 110,
+              "CName": "Thành viên CLB/Tổ/Đội/Nhóm SV hợp pháp, hoạt động về văn nghệ, thể thao, tình nguyện, sở thích",
+              "UCDes": "",
+              "UCPoint": 0.0,
+              "TCPoint": 0.0,
+              "CMaxPoint": 6.0,
+              "AssessUser": "",
+              "Proof": 1,
+              "ProofText": 0,
+              "UserCriteriaActivityLst": []
             }
           ]
         },
         {
           "CGId": 7,
           "CGName": "Tham gia các hoạt động chính trị - xã hội",
-          "CGPoint": 6.00,
+          "CGPoint": 9.00,
           "TCGPoint": 0.0,
           "CGMaxPoint": 12.0,
           "UserCriteriaDetailsLst": [
@@ -479,17 +547,28 @@
               "UserCriteriaActivityLst": []
             },
             {
-              "UCId": 3420287,
+              "UCId": 4172648,
               "CId": 68,
               "CName": "Có hành động tích cực trên không gian mạng (hoạt động online) phù hợp với chủ trương của Nhà trường, Nhà nước được tập thể ghi nhận",
               "UCDes": "",
-              "UCPoint": 0.0,
+              "UCPoint": 3.00,
               "TCPoint": 0.0,
               "CMaxPoint": 3.0,
               "AssessUser": "",
               "Proof": 1,
               "ProofText": 0,
-              "UserCriteriaActivityLst": []
+              "UserCriteriaActivityLst": [
+                {
+                  "UCAId": 14210077,
+                  "AId": 6734,
+                  "AName": "Tham gia bình chọn cho các dự án của ĐHBKHN trong Vòng chung kết cuộc thi SV Startup 2022",
+                  "CreateUser": "20194461",
+                  "CreateDate": "2023-03-18 11:33:42",
+                  "StartTime": "2023-03-01 12:00:00",
+                  "FinishTime": "2023-03-20 12:00:00",
+                  "UCAStatus": 1
+                }
+              ]
             },
             {
               "UCId": 0,
@@ -505,37 +584,59 @@
               "UserCriteriaActivityLst": []
             },
             {
-              "UCId": 0,
+              "UCId": 4185531,
               "CId": 108,
               "CName": "Tham gia hoạt động khảo sát thông tin do Nhà trường thực hiện",
               "UCDes": "",
-              "UCPoint": 0.0,
+              "UCPoint": 3.00,
               "TCPoint": 0.0,
               "CMaxPoint": 3.0,
               "AssessUser": "",
               "Proof": 1,
               "ProofText": 0,
-              "UserCriteriaActivityLst": []
+              "UserCriteriaActivityLst": [
+                {
+                  "UCAId": 14210078,
+                  "AId": 6563,
+                  "AName": "[2022.1] Khảo sát về một số hoạt động liên quan đến Công tác Sinh viên và Đào tạo",
+                  "CreateUser": "20194461",
+                  "CreateDate": "2023-03-18 11:33:42",
+                  "StartTime": "2023-01-30 00:00:00",
+                  "FinishTime": "2023-03-15 00:00:00",
+                  "UCAStatus": 1
+                }
+              ]
             },
             {
-              "UCId": 3404616,
+              "UCId": 4131271,
               "CId": 109,
               "CName": "Tham gia sự kiện chính trị - xã hội (các Đại hội, Hội nghị, cuộc họp của tổ chức Đảng - Đoàn - Hội từ cấp Chi bộ - Chi đoàn - Chi hội trở lên,… và các chương trình mang tính chính trị - xã hội khác)",
               "UCDes": "",
-              "UCPoint": 0.00,
+              "UCPoint": 3.00,
               "TCPoint": 0.0,
               "CMaxPoint": 3.0,
               "AssessUser": "",
               "Proof": 1,
               "ProofText": 0,
-              "UserCriteriaActivityLst": []
+              "UserCriteriaActivityLst": [
+                {
+                  "UCAId": 14210079,
+                  "AId": 6725,
+                  "AName": "[CBSV CNTT&TT] Sinh hoạt Chi bộ Sinh viên - Học kì 20221",
+                  "CreateUser": "20194461",
+                  "CreateDate": "2023-03-18 11:33:42",
+                  "StartTime": "2023-02-28 00:00:00",
+                  "FinishTime": "2023-02-28 00:00:00",
+                  "UCAStatus": 1
+                }
+              ]
             }
           ]
         },
         {
           "CGId": 8,
           "CGName": "Tham gia công tác cán bộ lớp, Đoàn - Hội",
-          "CGPoint": 0.0,
+          "CGPoint": 4.00,
           "TCGPoint": 0.0,
           "CGMaxPoint": 6.0,
           "UserCriteriaDetailsLst": [
@@ -553,17 +654,28 @@
               "UserCriteriaActivityLst": []
             },
             {
-              "UCId": 0,
+              "UCId": 4131272,
               "CId": 70,
               "CName": "Cán bộ Tổ/Đội/CLB, Lớp, Đoàn - Hội, Chi bộ hoàn thành tốt nhiệm vụ được tập thể công nhận",
               "UCDes": "",
-              "UCPoint": 0.0,
+              "UCPoint": 4.00,
               "TCPoint": 0.0,
               "CMaxPoint": 4.0,
               "AssessUser": "",
               "Proof": 1,
               "ProofText": 0,
-              "UserCriteriaActivityLst": []
+              "UserCriteriaActivityLst": [
+                {
+                  "UCAId": 14210080,
+                  "AId": 6728,
+                  "AName": "[CBSV CNTT&TT] Đảng viên Hoàn thành Tốt nhiệm vụ  - Học kì 20221",
+                  "CreateUser": "20194461",
+                  "CreateDate": "2023-03-18 11:33:42",
+                  "StartTime": "2023-02-28 00:00:00",
+                  "FinishTime": "2023-02-28 00:00:00",
+                  "UCAStatus": 1
+                }
+              ]
             },
             {
               "UCId": 0,
@@ -592,42 +704,64 @@
         {
           "CGId": 9,
           "CGName": "Các hoạt động liên quan đến trách nhiệm công dân",
-          "CGPoint": 16.00,
+          "CGPoint": 12.00,
           "TCGPoint": 0.0,
           "CGMaxPoint": 16.0,
           "UserCriteriaDetailsLst": [
             {
-              "UCId": 3404619,
+              "UCId": 4172649,
               "CId": 73,
               "CName": "Hiểu biết và chấp hành pháp luật của Nhà nước, quy định của nhà trường và nơi cư trú",
               "UCDes": "",
-              "UCPoint": 0.00,
+              "UCPoint": 8.00,
               "TCPoint": 0.0,
               "CMaxPoint": 8.0,
               "AssessUser": "",
               "Proof": 1,
               "ProofText": 0,
-              "UserCriteriaActivityLst": []
+              "UserCriteriaActivityLst": [
+                {
+                  "UCAId": 14210081,
+                  "AId": 5528,
+                  "AName": "Cuộc thi tìm hiểu Pháp luật kỳ 2022.1",
+                  "CreateUser": "20194461",
+                  "CreateDate": "2023-03-18 11:33:42",
+                  "StartTime": "2022-12-26 08:00:00",
+                  "FinishTime": "2023-03-13 00:00:00",
+                  "UCAStatus": 1
+                }
+              ]
             },
             {
-              "UCId": 3275569,
+              "UCId": 4131288,
               "CId": 74,
               "CName": "Tham gia tuyên truyền chủ trương của Đảng, chính sách pháp luật của Nhà nước, quy định của nơi cư trú, quy định và quy chế của nhà trường được địa phương, Nhà trường công nhận",
               "UCDes": "",
-              "UCPoint": 0.00,
+              "UCPoint": 4.00,
               "TCPoint": 0.0,
               "CMaxPoint": 4.0,
               "AssessUser": "",
               "Proof": 1,
               "ProofText": 0,
-              "UserCriteriaActivityLst": []
+              "UserCriteriaActivityLst": [
+                {
+                  "UCAId": 14210082,
+                  "AId": 6729,
+                  "AName": "[CBSV CNTT&TT] Đảng viên Tham gia tuyên truyền chủ trương của Đảng được Chi bộ công nhận - Học kì 20221",
+                  "CreateUser": "20194461",
+                  "CreateDate": "2023-03-18 11:33:42",
+                  "StartTime": "2023-02-28 00:00:00",
+                  "FinishTime": "2023-02-28 00:00:00",
+                  "UCAStatus": 1
+                }
+              ]
             },
             {
-              "UCId": 3275570,
+              "UCId": 0,
               "CId": 98,
               "CName": "Khai báo thông tin liên lạc và nơi cư trú theo yêu cầu của Nhà trường",
               "UCDes": "",
-              "UCPoint": 0.00,
+              "UCPoint": 0.0,
               "TCPoint": 0.0,
               "CMaxPoint": 4.0,
               "AssessUser": "",
@@ -653,7 +787,7 @@
         {
           "CGId": 10,
           "CGName": "Có các thành tích trong học tập và rèn luyện",
-          "CGPoint": 0.0,
+          "CGPoint": 4.00,
           "TCGPoint": 0.0,
           "CGMaxPoint": 4.0,
           "UserCriteriaDetailsLst": [
@@ -671,17 +805,28 @@
               "UserCriteriaActivityLst": []
             },
             {
-              "UCId": 0,
+              "UCId": 4131289,
               "CId": 76,
               "CName": "Đạt loại Khá trở lên khi tham gia học \"Lớp bồi dưỡng nhận thức về Đảng\"",
               "UCDes": "",
-              "UCPoint": 0.0,
+              "UCPoint": 4.00,
               "TCPoint": 0.0,
               "CMaxPoint": 4.0,
               "AssessUser": "",
               "Proof": 1,
               "ProofText": 0,
-              "UserCriteriaActivityLst": []
+              "UserCriteriaActivityLst": [
+                {
+                  "UCAId": 14210083,
+                  "AId": 6730,
+                  "AName": "[CBSV CNTT&TT] SV Đạt loại Khá trở lên tại lớp Cảm tình Đảng - Học kì 20221",
+                  "CreateUser": "20194461",
+                  "CreateDate": "2023-03-18 11:33:42",
+                  "StartTime": "2023-02-28 00:00:00",
+                  "FinishTime": "2023-02-28 00:00:00",
+                  "UCAStatus": 1
+                }
+              ]
             },
             {
               "UCId": 0,
